@@ -68,10 +68,10 @@ def print_joint_details(data, features, statistic_functions, statistic_functions
 def filter_by_feature_hadar(data, feature, value):
     true_dict = {}
     false_dict = {}
-    for k, v in data:
-        true_list = []
-        false_list = []
-        for a, wanted in zip(v, data[feature].values()):
+    for k, v in data:  # iterate over our data
+        true_list = []  # whichever lines match our condtion of 'value', well add to this list
+        false_list = []  # the rest go here
+        for a, wanted in zip(v, data[feature].values()): # iterate over the wanted feature list and one of the columns
             if wanted == value:
                 true_list.append(a)
             else:
