@@ -4,7 +4,8 @@ import statistics
 
 
 def main(argv):
-    data = Data.load_data(argv[1], argv[2])
+    features = Data.string_to_array(argv[2])
+    data = Data.load_data(argv[1], features)
     summer, other_seasons = Data.filter_by_feature(data, "season", 1)
     holiday, weekday = Data.filter_by_feature(data, "is_holiday", 1)
     datas = [summer, holiday, data]

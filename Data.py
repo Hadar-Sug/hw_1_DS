@@ -10,7 +10,6 @@ def load_data(path, features):
     """
     df = pandas.read_csv(path)
     data = df.to_dict(orient="list")
-    features = string_to_array(features)
     return dict((k, data[k]) for k in features if k in data)
 
 
